@@ -9,7 +9,7 @@ public abstract class Product {
 	protected double price;
 	protected int quantity;
 	
-	//Constructor
+	
 	
 	/**
 	 * Constructor

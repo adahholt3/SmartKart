@@ -1,13 +1,19 @@
 package smartkart;
 
 public abstract class Product {
-	
+	/**
+	 * Product Parent Class Done by Adah Holt
+	 */
 	protected String productID;
 	protected String name;
 	protected double price;
 	protected int quantity;
 	
 	//Constructor
+	
+	/**
+	 * Constructor
+	 */
 	public Product(String productID, String name, double price, int quatity)
 	{
 		this.productID = productID;
@@ -16,7 +22,9 @@ public abstract class Product {
 		this.quantity = quantity;
 	}
 	
-	//Getters
+	/**
+	 * Getters
+	 */
 	public String getProductID()
 	{
 		return productID;
@@ -34,10 +42,14 @@ public abstract class Product {
 		return quantity;
 	}
 	
-	//Abstract method
+	/**
+	 * Abstract method for calculating tax
+	 */
 	public abstract double calculateTax(int quantity);
 	
-	//Purchase method
+	/**
+	 * Purchase method which reduces stock(quantity) when an item is purchased
+	 */
 	public boolean purchase(int amount)
 	{
 		if(amount <= 0)
@@ -51,7 +63,9 @@ public abstract class Product {
 		return false;
 	}
 	
-	//Restock method
+	/**
+	 * Restocks amount to stock
+	 */
 	public void restock(int amount)
 	{
 		if(quantity == 0)

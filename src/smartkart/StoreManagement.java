@@ -1,27 +1,53 @@
 package smartkart;
-import java.util.ArrayList;
-import java.util.Scanner;
-/**
- * Return Kiosk Created by Adah Holt
- */
 
-public class StoreManagment{
+import java.util.Scanner;
+
+import java.util.ArrayList;
+
+public class StoreManagement {
 	
-	private ArrayList<Product> inventory;
-	private ArrayList<Product> cart;
+	ArrayList<Product>inventory;
+	ArrayList<Product>cart;
 	private ArrayList<Purchase> purchaseHistory;
 	
-	public StoreManagment()
-	{
-		inventory = new ArrayList<>();
-		cart = new ArrayList<>();
+	public StoreManagement(ArrayList<Product>inventory,ArrayList<Product>cart) {
+		
+		this.cart = new ArrayList<>();
+		this.inventory = new ArrayList<>();
 		purchaseHistory = new ArrayList<>();
+		
 	}
+	// 4.1 - View Inventory
+	
+	public void displayInventory() {
+		System.out.println("Product ID , Name , Price, Quantity");
+		for (Product info : inventory) {
+			System.out.println(info);
+		}
+	
+	// 4.2 - Add to Cart
+		Scanner scn = new Scanner (System.in);
+		String enteredProductID = scn.nextLine();
+		
+		int amount = scn.nextInt(); // Customers want quantity
+		
+		//Finish Checks
+		//Product exist
+		//?? use a if statement to check entered input with inventory i believe
+		
+		// maybe the scanner goes in main() method, to ask for user input 
+		
+		
+		
+		
+			
 
-	
-	
-	
-	
+		
+			
+		
+		scn.close();
+		
+		}
 	
 	/**
 	 * Return Kiosk Created by Adah Holt
@@ -145,3 +171,8 @@ public class StoreManagment{
 		
 	}
 }
+
+	
+
+	
+

@@ -1,9 +1,12 @@
 package smartkart;
 
-import SmartKart.groceries.Groceries;
+import smartkart.Groceries;
 import java.util.Scanner;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.io.File;
+import java.io.FileNotFoundException;
+
 
 public class StoreManagement {
 	/**
@@ -21,6 +24,27 @@ public class StoreManagement {
 		this.inventory = new ArrayList<>();
 		purchaseHistory = new ArrayList<>();
 		
+	}
+	public void loadInventory(String fileName)
+	{
+		try
+		{
+			File file = new File(fileName);
+			Scanner scanner = new Scanner(file);
+			
+			while(scanner.hasNextLine())
+			{
+				String line = scanner.nextLine();
+				String[] parts = line.split("\t");
+				
+			}
+			
+			scanner.close();
+		}
+		catch(Exception e)
+		{
+			System.out.println("Error loading inventory");
+		}
 	}
 	// 4.1 - View Inventory
 	/** Aamna D.

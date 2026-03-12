@@ -1,0 +1,7 @@
+type	product id 	name	price	quantity	brand	size	material	expiration
+electronics	101	Laptop	12000	5	Dell			
+clothing	302	Skirt	55	30		S	Cotton	
+groceries	605	Milk	5.3	400				2024-01-01
+clothing	350	Pants	65	100		L	Silk	
+electronics	392	Headphones	200	10	Sony			
+groceries	234	Cranberries	2.5	58				2026-04-01

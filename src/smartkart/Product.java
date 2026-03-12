@@ -3,6 +3,8 @@ package smartkart;
 public abstract class Product {
 	/**
 	 * Product Parent Class Done by Adah Holt
+	 * Abstract parent class 
+	 * Stores common product information and behavior
 	 */
 	protected String productID;
 	protected String name;
@@ -14,7 +16,7 @@ public abstract class Product {
 	/**
 	 * Constructor
 	 */
-	public Product(String productID, String name, double price, int quatity)
+	public Product(String productID, String name, double price, int quantity)
 	{
 		this.productID = productID;
 		this.name = name;
@@ -33,11 +35,11 @@ public abstract class Product {
 	{
 		return name;
 	}
-	public double price()
+	public double getPrice()
 	{
 		return price;
 	}
-	public int quantity()
+	public int getQuantity()
 	{
 		return quantity;
 	}
@@ -52,15 +54,12 @@ public abstract class Product {
 	 */
 	public boolean purchase(int amount)
 	{
-		if(amount <= 0)
+		if(amount <= 0 || amount > quantity)
 		{
 			return false;
 		}
-		if(amount<=quantity) {
-			quantity-=amount;
-			return true;
-		}
-		return false;
+		quantity -= amount;
+		return true;
 	}
 	
 	/**
@@ -68,7 +67,7 @@ public abstract class Product {
 	 */
 	public void restock(int amount)
 	{
-		if(quantity == 0)
+		if(amount> 0)
 			quantity += amount;
 	}
 	

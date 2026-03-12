@@ -3,7 +3,8 @@ package smartkart;
 import java.time.LocalDate;
 /**
  * Purchase Created by Adah Holt
- * Created to use for purchase history for kiosk method
+ * Created to use for kiosk method
+ * Represents a purchase record used for return history
  */
 
 public class Purchase {
@@ -43,10 +44,11 @@ public class Purchase {
 	}
 	
 	/**
-	 * Reduces stock
+	 * Reduces the recorded purchase quanttiy after a return
 	 */
 	public void reduceQuantity(int amount)
 	{
+		if(amount > 0 && amount <= quantity)
 		quantity -= amount;
 	}
 

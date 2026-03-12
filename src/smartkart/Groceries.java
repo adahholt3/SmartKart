@@ -4,17 +4,18 @@ import java.time.LocalDate;
 
 /**
  * Groceries Class Done by Adah Holt
+ * Child Class of Product
  */
 public class Groceries extends Product{
 
 	private LocalDate expirationDate;
-	private boolean expired;
+	
 	
 	
 	/**
 	 * Constructor
 	 */
-	public Groceries(String productID, String name, double price, int quantity)
+	public Groceries(String productID, String name, double price, int quantity, LocalDate expirationDate)
 	{
 		super(productID, name, price, quantity);
 		this.expirationDate = expirationDate;
@@ -37,9 +38,9 @@ public class Groceries extends Product{
 		if(LocalDate.now().isAfter(expirationDate))
 		{
 			System.out.println("its expired brah");
-			return false;
+			return true;
 		}
-		return true;
+		return false;
 	}
 	
 	/**
@@ -58,7 +59,8 @@ public class Groceries extends Product{
 	{
 		if(isExpired())
 		{
-			return false;
+			System.out.println("Cannot purchase because it is expired");
+			return true;
 		}
 		return super.purchase(amount);
 	}

@@ -49,12 +49,14 @@ public class StoreManagement {
 		
 		}
 	
+	
+	// Pathname for tsv '/Users/adahholt/Downloads/TSV done by Adah - Sheet1 (1).tsv.zip'
 	/**
 	 * Return Kiosk Created by Adah Holt
 	 */
-	public void returnKiosk ()
+	public void returnKiosk (Scanner scanner)
 	{
-		Scanner scanner = new Scanner(System.in);
+		
 		
 		System.out.println("ENTER PRODUCT ID: ");
 		String id = scanner.nextLine();
@@ -101,14 +103,16 @@ public class StoreManagement {
 		System.out.println("Quantity to return: ");
 		int quantity = scanner.nextInt();
 		
+		
 		if(quantity > foundPurchase.getQuantity())
 		{
 			System.out.println("cannot return more items than purchase");
 			return;
 		}
 		
+		scanner.nextLine();
 		System.out.println("Condition (New/worn): ");
-		String condition = scanner.nextLine();
+		String condition = scanner.nextLine().toLowerCase();
 		
 		/**
 		 * Checks eligibility using method from interface

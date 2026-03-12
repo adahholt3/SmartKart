@@ -122,7 +122,7 @@ public class StoreManagement {
 		}
 	
 	
-	// Pathname for tsv '/Users/adahholt/Downloads/TSV done by Adah - Sheet1 (1).tsv.zip'
+	
 	/**
 	 * Return Kiosk Created by Adah Holt
 	 */

@@ -6,8 +6,12 @@ import java.time.LocalDate;
  * Groceries Class Done by Adah Holt
  * Child Class of Product
  */
+
 public class Groceries extends Product{
 
+	/**
+	 * I used ChatGPT to look up how to use the additional field LocalDate
+	 */
 	private LocalDate expirationDate;
 	
 	
@@ -37,7 +41,7 @@ public class Groceries extends Product{
 	{
 		if(LocalDate.now().isAfter(expirationDate))
 		{
-			System.out.println("its expired brah");
+			System.out.println("This product is expired");
 			return true;
 		}
 		return false;
@@ -60,7 +64,7 @@ public class Groceries extends Product{
 		if(isExpired())
 		{
 			System.out.println("Cannot purchase because it is expired");
-			return true;
+			return false;
 		}
 		return super.purchase(amount);
 	}

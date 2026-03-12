@@ -1,4 +1,4 @@
-package SmartKart;
+package smartkart;
 
 /**
  * electronic class by Aamna D.

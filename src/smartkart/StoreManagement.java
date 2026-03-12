@@ -1,10 +1,15 @@
 package smartkart;
 
+import SmartKart.groceries.Groceries;
 import java.util.Scanner;
-
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class StoreManagement {
+	/**
+	 * StoreManagement - created by Aamna D. 
+	 * Sets up the attribute and arraylists for inventory and cart
+	 */
 	
 	ArrayList<Product>inventory;
 	ArrayList<Product>cart;
@@ -18,35 +23,78 @@ public class StoreManagement {
 		
 	}
 	// 4.1 - View Inventory
+	/** Aamna D.
+	 * prints the product info inventory
+	 */
 	
 	public void displayInventory() {
 		System.out.println("Product ID , Name , Price, Quantity");
-		for (Product info : inventory) {
+		for (product info : inventory) {
 			System.out.println(info);
 		}
-	
-	// 4.2 - Add to Cart
-		Scanner scn = new Scanner (System.in);
-		String enteredProductID = scn.nextLine();
-		
-		int amount = scn.nextInt(); // Customers want quantity
-		
-		//Finish Checks
-		//Product exist
-		//?? use a if statement to check entered input with inventory i believe
-		
-		// maybe the scanner goes in main() method, to ask for user input 
-		
-		
-		
-		
+	}
+	// 4.2 - Add to Cart	
+		/** Aamna D.
+		 * @param productID
+		 * @param quantity
+		 * Checks if prodcutID has a match and if so then by looping through inventory
+		 */
+		public void addtoCart(String productID, int quantity) {
+			product match =null; 
 			
-
-		
+			for(product p : inventory) {
+				if (p.getProductID().equals(productID)) {
+					match = p;
+					break;
+				}
+			}
+			if (match == null) {
+				System.out.println("Product match not found");
+				return;
+			}
+			/** Aamna D.
+			 * checks if the product is apart of with instanceof groceries
+			 * and if so checks if expired or not 
+			 */
+			if (match instanceof Groceries) {
+				Groceries g = (Groceries) match;
+				if (g.getExpirationDate().isAfter(LocalDate.now())) {
+					System.out.println("Prodcut is expired");
+					return;
+				}
+			}
 			
-		
-		scn.close();
-		
+			/**
+			* Aamna D.
+			 * Adds product to cart if successful
+			 */
+			match.purchase(quantity);
+			cart.add(match);
+			System.out.println("Added to cart");
+			
+			/**
+			 * Prints the receipt, calculates the total for each item
+			 * Aamna D.
+			 */
+		}
+		public void receipt(ArrayList<product>cart) {
+			double subTotal = 0.0;
+			double taxTotal = 0.0;
+			double Total = 0.0;
+			
+			for (product p : cart) {
+				double productPrice = p.getPrice();
+				double productTax = p.calculateTax(amount);
+				
+				System.out.printf(p.getName(),productPrice, "Quantity: " + 1,productTax);
+				
+				subTotal = subTotal + productPrice;
+				taxTotal = taxTotal + productTax;
+				Total = (subTotal + taxTotal);
+				
+			}
+			System.out.println("Subtotal : " + subTotal + "Tax : " + taxTotal + "Total : " + (Total));
+			 
 		}
 	
 	

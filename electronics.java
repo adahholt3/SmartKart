@@ -1,5 +1,4 @@
 package SmartKart;
-
 /**
  * electronic class by Aamna D.
  */
@@ -12,13 +11,11 @@ public class electronics extends product implements Returnable {
 		this.brand = brand;
 	}
 	
-	
 	// Getter for electronic brand
 		public String getBrand() {
 			return brand;
 		}
 	
-
 	@Override
 	double calculateTax(int quantity) {
 		// 
@@ -29,7 +26,7 @@ public class electronics extends product implements Returnable {
 		
 	}
 
-	/*
+	/**
 	 *  ○ Return window: 15 days
 	 *  ○ If condition = "Open Box" → 10% fee
 	 */
@@ -42,7 +39,6 @@ public class electronics extends product implements Returnable {
 
 	}
 
-
 	@Override
 	public double processRefund(int quantity, String condition) {
 		
@@ -54,7 +50,9 @@ public class electronics extends product implements Returnable {
 			return total;
 		}
 	
-		
+		/**
+         * creates the receipt for the customer with there name and address
+        */
 
 	@Override
 	public String generateReturnLabel(String customerName, String address) {
@@ -62,7 +60,6 @@ public class electronics extends product implements Returnable {
 		String receipt = "Receipt for " + customerName + "and " + address;
 		System.out.println(receipt);
 		return receipt;
-		
 		
 	}
 

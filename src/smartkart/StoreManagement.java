@@ -37,7 +37,7 @@ public class StoreManagement {
 		/** Aamna D.
 		 * @param productID
 		 * @param quantity
-		 * Checks if prodcutID has a match and if so then by looping through inventory
+		 * Checks if productID has a match and quantity is enough, by looping though the inventory.
 		 */
 		public void addtoCart(String productID, int quantity) {
 			product match =null; 

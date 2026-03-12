@@ -43,7 +43,7 @@ public class StoreManagement {
 			product match =null; 
 			
 			for(product p : inventory) {
-				if (p.getProductID().equals(productID)) {
+				if (p.getProductID()==productID) {
 					match = p;
 					break;
 				}

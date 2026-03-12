@@ -65,10 +65,11 @@ public class StoreManagement {
 			
 			/**
 			* Aamna D.
-			 * Adds product to cart if successful
+			 * Adds product to cart and removes from inventory if successful
 			 */
 			match.purchase(quantity);
 			cart.add(match);
+			inventory.remove(match);
 			System.out.println("Added to cart");
 			
 			/**

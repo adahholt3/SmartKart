@@ -43,10 +43,9 @@ public class StoreManagement {
 			product match =null; 
 			
 			for(product p : inventory) {
-				if (p.getProductID()==productID) {
+			if ((p.getProductID()==productID) && (p.getquantity() <= quantity))
 					match = p;
-					break;
-				}
+		 			break;		
 			}
 			if (match == null) {
 				System.out.println("Product match not found");

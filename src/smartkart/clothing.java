@@ -1,11 +1,11 @@
-package SmartKart;
+package smartkart;
 
 /**
  * clothing class by Aamna D.
  * Clothing is child class of product and also implements the Returnable interface
  */
 
-public class clothing extends product implements Returnable {
+public class clothing extends Product implements Returnable {
 	
 	/**
 	 * adds additional attributes of size and material

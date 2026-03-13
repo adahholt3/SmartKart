@@ -5,7 +5,7 @@ package smartkart;
  * Child class of product class and also implements returnable interface
  */
 
-public class electronics extends product implements Returnable {
+public class electronics extends Product implements Returnable {
 	/**
 	 * Sets up the additional attribute brand and also the super classes, and the constructor
 	 */	
